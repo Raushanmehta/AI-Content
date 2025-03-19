@@ -1,11 +1,13 @@
-import { Button } from "@/components/ui/button";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+
 
 
 export default function Home() {
   return (
     <div >
-      <h2>Hello</h2>
-      <Button className="balck" variant="outline">Submit</Button>
+      <Navbar/>
+      <Hero/>
     </div>
   );
 }

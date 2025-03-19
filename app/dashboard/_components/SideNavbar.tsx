@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
 import UsageTrack from './UsageTrack'
 
-const SideNavbar = () => {
+function SideNavbar () {
 
     const MenuList = [
             { name: 'Home', icon: Home, path:'/dashboard' },
@@ -16,7 +16,7 @@ const SideNavbar = () => {
 
         const path=usePathname();
         useEffect(()=>{
-            console.log(path);
+            
         },[])
   return (
     <div className='h-screen relative p-5 shadow-sm boarder'>
@@ -27,7 +27,7 @@ const SideNavbar = () => {
         <div className='mt-10'>
             {MenuList.map((menu, index)=>(
                 
-                <div  className={`flex gap-2 mb-2 p-3 hover:bg-emerald-300 hover:text-white rounded-lg cursor-pointer
+                <div key={index}  className={`flex gap-2 mb-2 p-3 hover:bg-emerald-300 hover:text-white rounded-lg cursor-pointer
                  items-center ${path==menu.path&&'bg-emerald-300 text-white'}`} >
                     <menu.icon/>
                     <h2>{menu.name}</h2>
@@ -35,7 +35,7 @@ const SideNavbar = () => {
             ))}
         </div>
         <div className='absolute bottom-10 left-0 w-full'>
-            <UsageTrack/>
+            <UsageTrack />
         </div>
     </div>
   )
