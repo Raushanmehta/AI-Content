@@ -49,6 +49,7 @@ async function History() {
         <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">AI RESPONSE</th>
         <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">WORDS</th>
         <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">DATE</th>
+        {/* <th className="px-4 py-3 text-left text-sm font-medium text-gray-600">COPY</th> */}
       </tr>
     </thead>
     <tbody>
@@ -65,6 +66,7 @@ async function History() {
             <td className=" px-4 py-3 line-clamp-2 w-md text-sm text-gray-700">{historyItem.aiResponse}</td>
             <td className=" px-4 py-3 text-sm text-gray-700">{TotalWordCount(historyItem.aiResponse)}</td>
             <td className=" px-4 py-3 text-sm text-gray-700">{moment(historyItem.createdAt,'DD/MM/YYYY').format('DD/MM/YYYY')}</td>
+            {/* <td><Button className='text-black' onClick={()=>navigator.clipboard.writeText(historyItem.aiResponse)}>Copy</Button></td> */}
           </tr>
         ))
       )}

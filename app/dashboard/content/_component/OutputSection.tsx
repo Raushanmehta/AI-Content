@@ -23,7 +23,8 @@ function OutputSection ({aiOutput}:props) {
     <div className='shadow-md  rounded-lg border border-gray-100'>
       <div className='flex justify-between items-center p-3'>
         <h2 className='text-lg font-semibold'>Your Result</h2>
-        <Button className='bg-gray-100 hover:bg-gray-300 cursor-pointer'><Copy/>Copy</Button>
+        <Button className='bg-gray-100 hover:bg-gray-300 cursor-pointer'
+        onClick={()=>navigator.clipboard.writeText(aiOutput)}><Copy/>Copy</Button>
       </div>
        <Editor 
         ref={editorRef}

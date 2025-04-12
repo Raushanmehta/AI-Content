@@ -43,10 +43,11 @@ const Feature = () => {
   return (
     <div className="max-w-[85rem] px-4 py-24 sm:px-6 lg:px-8 lg:py-14 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <h1 className="sm:text-5xl text-3xl font-bold  mb-4 text-gray-900">
+          <h1 className="sm:text-5xl text-4xl font-bold  mb-4 text-gray-900">
             Advance Feature of AI
           </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-sm">
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-md
+           text-gray-500 font-medium">
             Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke
             farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies
             heirloom prism food truck ugh squid celiac humblebrag.

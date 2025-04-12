@@ -8,3 +8,7 @@
     @apply  bg-white border border-gray-200 text-sm text-gray-600  rounded-full transition
      hover:border-gray-300 focus:outline-hidden focus:border-gray-300 cursor-pointer;
 }
+
+.animation-arrow {
+  @apply transition-transform duration-300 hover:translate-x-1
+}

@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import FormSection from '../_component/FormSection';
 import OutputSection from '../_component/OutputSection';
 import { TEMPLATE } from '../../_components/TemplateListSection';
@@ -11,6 +11,8 @@ import { chatSession } from '@/utils/AiModel';
 import { db } from '@/utils/db';
 import { AIOutput } from '@/utils/schema';
 import { useUser } from '@clerk/nextjs';
+import { TotalUsageContext } from '@/app/(context)/TotalUsageContext';
+import { useRouter } from 'next/navigation';
 
 
 
@@ -23,15 +25,19 @@ interface PROPS{
 const CreateNewContent=(props:PROPS)=> {
 
   
-  const selectedTemplate:TEMPLATE|undefined=Templates?.find((item)=>
-    item.slug==props.params["template-slug"]);
-  
+  const selectedTemplate:TEMPLATE|undefined=Templates?.find((item)=>item.slug==props.params["template-slug"]);
   const [loading, setLoading]= useState(false);
   const[aiOutput, setAiOutput]= useState<string>('');
-
   const {user}=useUser();
-  
+  const {totalUsage, setTotalUsage} = useContext(TotalUsageContext);
+  const router = useRouter();
+
   const GeneratedAIContent= async(formData:any)=>{
+    if(totalUsage>=10000){
+      console.log("Please Upgrade")
+      router.push('/dashboard/billing')
+      return ;
+    }
     setLoading(true);
       const SelectedPrompt = selectedTemplate?.aiPrompt;
       const FinalAIPrompt = JSON.stringify(formData)+","+SelectedPrompt;

@@ -1,43 +1,31 @@
 import Image from 'next/image'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React from 'react'
-
+import { Button } from './ui/button'
 
 const Navbar = () => {
-  
-  const navLinks = [
-    { label: 'First Link', href: '/' },
-    { label: 'Second Link', href: '/second' },
-    { label: 'Third Link', href: '/third' },
-    { label: 'Fourth Link', href: '/fourth' },
-  ]
+  const router = useRouter();
+
   return (
-    <div>
-      <header className="text-gray-600 body-font sticky top-0">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <Image src={"/logo.svg"} alt='logo' width={150} height={100} />
-          <nav className="hidden md:ml-auto md:mr-auto md:flex flex-wrap items-center 
-          font-semibold text-balance justify-center">
-            <ul className="list-none md:ml-6 md:flex flex-wrap">
-              {navLinks.map((link, index) => (
-                <li key={index} className="mr-5">
-                  <Link href={link.href} className="text-black hover:text-gray-900">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <Link href={'/dashboard'} 
-            className="hidden md:inline-flex items-center bg-gray-100 border-0 py-2 px-6 focus:outline-none
-             hover:bg-gray-200 rounded-full font-semibold text-base mt-4 md:mt-0"
+    <header className="text-gray-600 body-font sticky top-0 ">
+      <div className="container mx-auto flex justify-between items-center p-5 md:px-16">
+        
+        <div className="flex items-center">
+          <Image src="/logo.svg" alt="logo" width={150} height={100} />
+        </div>
+
+        <div>
+          <Button
+            onClick={() => router.push('/dashboard')}
+            className="items-center bg-gray-100 border-0 py-2 px-6 focus:outline-none
+              hover:bg-gray-200 rounded-full font-semibold text-base"
           >
             Join us
-          </Link>
+          </Button>
         </div>
-      </header>
-    </div>
-  )
-}
+      </div>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;

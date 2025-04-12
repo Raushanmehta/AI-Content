@@ -3,13 +3,14 @@ import { db } from '@/utils/db';
 import { AIOutput } from '@/utils/schema';
 import { useUser } from '@clerk/nextjs';
 import { eq } from 'drizzle-orm';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { HISTORY } from '../history/page';
+import { TotalUsageContext } from '@/app/(context)/TotalUsageContext';
 
 function  UsageTrack() {
 
   const { user } = useUser();
-  const [totalUsage, setTotalUsage] = useState<number>(0);
+  const {totalUsage, setTotalUsage} = useContext(TotalUsageContext);
 
   useEffect(() => {
     if (user) {
@@ -42,7 +43,8 @@ function  UsageTrack() {
         <div className='bg-emerald-400 text-whit p-2 rounded-md'>
             <h2 className=' font-semibold'>Credits</h2>
             <div className='h-2 bg-white  rounded-full w-full'>
-              <div className='h-2 bg-gray-300 rounded-full' style={{width:'35%'}}>
+              <div className='h-2 bg-gray-300 rounded-full' 
+              style={{width:(totalUsage/10000)*100+"%"}}>
 
               </div>
             </div>
