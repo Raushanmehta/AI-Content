@@ -7,12 +7,17 @@ const Pricing = () => {
   return (
 <div className="overflow-hidden">
   <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-24 mx-auto">
-   
-    <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
-      <h2 className="text-3xl lg:text-4xl text-gray-800 font-bold">
-        Solo, agency or team? We’ve got you covered.
-      </h2>
-    </div> 
+  <div className="flex flex-col text-center w-full mb-20">
+          <h1 className="sm:text-5xl text-4xl font-bold  mb-4 text-white">
+           Free & Pricing 
+          </h1>
+          <p className="lg:w-2/3 mx-auto leading-relaxed text-md
+           text-gray-500 font-medium">
+            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke
+            farm-to-table. Franzen you probably haven't heard of them man bun deep jianbing selfies
+            heirloom prism food truck ugh squid celiac humblebrag.
+          </p>
+        </div> 
     <div className="relative xl:w-10/12 xl:mx-auto">    
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">     
         <div>
@@ -43,7 +48,7 @@ const Pricing = () => {
     
     <div className="mt-7 text-center">
       <p className="text-xs text-gray-400">
-        Prices in USD. Taxes may apply.
+        Prices in Rupees. Taxes may apply.
       </p>
     </div>
   </div>

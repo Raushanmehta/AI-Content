@@ -41,9 +41,9 @@ const Feature = () => {
   ];
 
   return (
-    <div className="max-w-[85rem] px-4 py-24 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <div className="max-w-[85rem] px-6 py-10 sm:px-6 lg:px-16 lg:py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <h1 className="sm:text-5xl text-4xl font-bold  mb-4 text-gray-900">
+          <h1 className="sm:text-5xl text-4xl font-bold  mb-4 text-white">
             Advance Feature of AI
           </h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-md
@@ -55,8 +55,8 @@ const Feature = () => {
         </div>
       <div className="relative p-6 md:p-16">
         <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
-          <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
-            <h2 className="text-2xl text-gray-800 font-bold sm:text-3xl">
+          <div className="mb-4 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
+            <h2 className="text-2xl text-white font-bold sm:text-3xl">
               Fully customizable rules to match your unique needs
             </h2>
             <nav
@@ -69,7 +69,8 @@ const Feature = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`text-start hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 p-4 md:p-5 rounded-xl transition-all ${
+                  className={`text-start hover:bg-gray-200 focus:outline-hidden 
+                    focus:bg-gray-200 p-4 md:p-5 rounded-xl transition-all ${
                     activeTab === tab.id
                       ? "bg-white shadow-md border-transparent"
                       : ""
@@ -117,15 +118,15 @@ const Feature = () => {
                     role="tabpanel"
                   >
                     <img
-                      className="shadow-xl shadow-gray-200 rounded-xl"
+                      className=" rounded-xl"
                       src={tab.image}
                       alt={tab.title}
                     />
                   </div>
                 ))}
               </div>
-
-              <div className="hidden absolute top-0 end-0 translate-x-20 md:block lg:translate-x-20">
+              <div className="hidden absolute top-0 end-0 translate-x-20 md:block
+               lg:translate-x-20">
                 <svg
                   className="w-16 h-auto text-orange-500"
                   width="121"
@@ -159,7 +160,8 @@ const Feature = () => {
         </div>
 
         <div className="absolute inset-0 grid grid-cols-12 size-full">
-          <div className="col-span-full lg:col-span-7 lg:col-start-6 bg-gray-100 w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full"></div>
+          <div className="col-span-full lg:col-span-7 lg:col-start-6  bg-black  orange-shadow w-full h-5/6 
+          rounded-xl sm:h-3/4 lg:h-full"></div>
         </div>
       </div>
     </div>

@@ -13,6 +13,8 @@ import { AIOutput } from '@/utils/schema';
 import { useUser } from '@clerk/nextjs';
 import { TotalUsageContext } from '@/app/(context)/TotalUsageContext';
 import { useRouter } from 'next/navigation';
+import { UserSubscriptionContext } from '@/app/(context)/UserSubscriptionContext';
+import { UpdateCreditUsageContext } from '@/app/(context)/UpdateCraditUsageContext';
 
 
 
@@ -31,9 +33,15 @@ const CreateNewContent=(props:PROPS)=> {
   const {user}=useUser();
   const {totalUsage, setTotalUsage} = useContext(TotalUsageContext);
   const router = useRouter();
-
+  const {userSubscription,setUserSubcription} = useContext(UserSubscriptionContext);
+  const{updateCreditUsage,setUpdateCreditUsage} = useContext(UpdateCreditUsageContext);
+  /**
+   * Used to Generate content from AI
+   * @param formData 
+   * @returns 
+   */
   const GeneratedAIContent= async(formData:any)=>{
-    if(totalUsage>=10000){
+    if(totalUsage>=10000&&!userSubscription){
       console.log("Please Upgrade")
       router.push('/dashboard/billing')
       return ;
@@ -47,6 +55,7 @@ const CreateNewContent=(props:PROPS)=> {
       setAiOutput(result?.response.text());
       await SaveInDb(JSON.stringify(formData),selectedTemplate?.slug,result?.response.text());
       setLoading(false);
+      setUpdateCreditUsage(Date.now())
     }
 
     const moment = require('moment');

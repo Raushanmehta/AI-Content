@@ -48,7 +48,7 @@ function FormSection({selectedTemplate,userFormInput,loading}:PROPS) {
          ))}
          <Button type='submit'
          disabled={loading}
-          className='w-full bg-green-400 cursor-pointer hover:bg-emerald-500
+          className='w-full orange-button cursor-pointer 
           py-6'>{loading&&<Loader2Icon className='animate-spin'/>} Get Generate</Button>
         </form>
     </div>

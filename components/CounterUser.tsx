@@ -10,7 +10,7 @@ const CounterUser: React.FC = () => {
   ];
 
   const renderIcon = (icon: string) => {
-    const baseStyle = "text-emerald-400 w-12 h-12 mb-3 inline-block";
+    const baseStyle = "text-[#FF9400] w-12 h-12 mb-3 inline-block";
     switch (icon) {
       case 'download':
         return (
@@ -50,14 +50,14 @@ const CounterUser: React.FC = () => {
   };
 
   return (
-    <section className="text-gray-600 body-font">
+    <section className="max-w-[85rem] px-4  sm:px-6 lg:px-8  mx-auto">
       <div className="containerde px-5 py-24 mx-auto">
         <div className="flex flex-wrap -m-4 text-center">
           {stats.map((stat) => (
             <div key={stat.title} className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
+              <div className="counter-border px-4 py-6 rounded-lg">
                 {renderIcon(stat.icon)}
-                <h2 className="title-font font-bold text-3xl text-gray-900">
+                <h2 className="title-font font-bold text-3xl text-white">
                   <CountUp end={stat.value} duration={2} separator="," suffix={stat.suffix} />
                 </h2>
                 <p className="leading-relaxed">{stat.title}</p>

@@ -3,7 +3,8 @@ import React from 'react'
 
 const SearchSection = ({onSearchInput}:any) => {
   return (
-    <div className='p-10 bg-emerald-300 flex  flex-col items-center justify-center font- 
+    <div className='p-10 bg-gradient-to-tl from-purple-500 via-orange-500 to-yellow-500 
+           flex  flex-col items-center justify-center font- 
         semibold'>
         <h2 className='text-5xl font-bold'>Browser All Template</h2>
         <p className='mt-2 text-xl'>What do you like to create todat?</p>

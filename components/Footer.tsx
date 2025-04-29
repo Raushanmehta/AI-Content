@@ -12,10 +12,10 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="mt-auto bg-gray-50 w-full">
+    <footer className="mt-auto bg-black w-full ">
       <div className="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="flex flex-col items-center text-center">
-          <h4 className="font-bold text-gray-900 text-3xl py-5 ">
+          <h4 className="font-bold text-white text-3xl py-5 ">
             Stay up to date
           </h4>
 
@@ -28,7 +28,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="w-full sm:w-auto px-5 py-2.5 bg-emerald-400 hover:bg-emerald-600 text-black rounded-full text-sm font-medium transition"
+                className="w-full sm:w-auto px-5 py-2.5 orange-button text-black rounded-full text-sm font-medium transition"
               >
                 Subscribe
               </button>

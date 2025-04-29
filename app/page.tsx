@@ -10,13 +10,12 @@ import Pricing from "@/components/Pricing";
 
 export default function Home() {
   return (
-    <div >
+    <div className="bg-black" >
       <Navbar/>
       <Hero/>
       <CounterUser/>
       <Feature/>
-      <Pricing/>
-      
+      <Pricing/>   
       <Footer/>
     </div>
   );

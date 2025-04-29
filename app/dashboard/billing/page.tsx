@@ -3,7 +3,10 @@ import FreeCard from '@/components/subComponents/FreeCard'
 import MonthlyCard from '@/components/subComponents/MonthlyCard'
 import React from 'react'
 
-const page = () => {
+function billing () {
+
+ 
+
   return (
     <div className="overflow-hidden">
   <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-4 mx-auto">
@@ -51,4 +54,4 @@ const page = () => {
   )
 }
 
-export default page
+export default billing

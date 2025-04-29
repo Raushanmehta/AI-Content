@@ -1,14 +1,28 @@
 @import "tailwindcss";
 
+
 .social-button {
-    @apply m-1 py-1 px-4 inline-flex items-center gap-x-2 text-xs font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none;
+    @apply m-1 py-1 px-4 inline-flex items-center gap-x-2 text-xs font-medium rounded-lg border border-gray-500 bg-black text-white shadow-2xs  focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none;
   }
 
 .gemni-button {
-    @apply  bg-white border border-gray-200 text-sm text-gray-600  rounded-full transition
+    @apply  bg-black border border-gray-500 text-sm text-white  rounded-full transition
      hover:border-gray-300 focus:outline-hidden focus:border-gray-300 cursor-pointer;
 }
 
 .animation-arrow {
   @apply transition-transform duration-300 hover:translate-x-1
+}
+
+.counter-border {
+  @apply border border-gray-500 bg-black text-white shadow-2xs  focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none
+}
+
+.orange-shadow {
+@apply shadow-[0px_20px_207px_10px_rgba(255,_155,_7,_1)]
+
+}
+
+.orange-button{
+  @apply bg-[#FF9400] hover:bg-gradient-to-r from-[#FF9400] to-amber-300
 }
