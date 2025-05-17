@@ -24,7 +24,7 @@ const MonthlyCard = () => {
     setLoading(true)
     axios.post('/api/create-subscription', {})
       .then(resp => {
-        console.log(resp.data)
+
         OnPayment(resp.data.id)
       })
       .catch(error => {
@@ -74,10 +74,13 @@ const MonthlyCard = () => {
 
   return (
     <div>
-      <div className="shadow-xl shadow-white p-5 relative z-10 bg-white border border-gray-200 rounded-xl md:p-10">
+      <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+      <div className="shadow-xl shadow-white p-5 relative z-10 bg-white border
+       border-gray-200 rounded-xl md:p-10">
         <h3 className="text-xl font-bold text-gray-800">Professional</h3>
         <div className="text-sm text-gray-500">Everything is unlimited.</div>
-        <span className="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3">Most popular</span>
+        <span className="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-xs 
+        font-medium bg-gray-800 text-white py-1.5 px-3">Most popular</span>
         
         <div className="mt-5">
           <span className="text-6xl font-bold text-gray-800">$9</span>
@@ -89,7 +92,8 @@ const MonthlyCard = () => {
           <ul className="space-y-2 text-sm sm:text-base">
             {['Up to 10 people', 'Collect data', 'Code extensibility'].map((text, idx) => (
               <li key={idx} className="flex gap-x-3">
-                <span className="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600">
+                <span className="mt-0.5 size-5 flex justify-center items-center 
+                rounded-full bg-blue-50 text-blue-600">
                   <CircleCheckBig />
                 </span>
                 <span className="text-gray-800">{text}</span>
@@ -100,7 +104,8 @@ const MonthlyCard = () => {
           <ul className="space-y-2 text-sm sm:text-base">
             {['Custom reports', 'Product support', 'Activity reporting'].map((text, idx) => (
               <li key={idx} className="flex gap-x-3">
-                <span className="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600">
+                <span className="mt-0.5 size-5 flex justify-center items-center 
+                rounded-full bg-blue-50 text-blue-600">
                   <CircleCheckBig />
                 </span>
                 <span className="text-gray-800">{text}</span>
@@ -119,10 +124,14 @@ const MonthlyCard = () => {
             <Button
               disabled={loading}
               onClick={CreateSubscription}
-              className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+              className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium 
+              rounded-lg border 
+              border-transparent bg-blue-600 text-white hover:bg-blue-700 
+              focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 
+              disabled:pointer-events-none"
             >
               {loading && <Loader2Icon className="animate-spin" />}
-              {userSubscription ? 'Active Plan' : 'Start Buy now'}
+              {userSubscription ? 'Active Plan' : 'Buy now'}
             </Button>
           </div>
         </div>

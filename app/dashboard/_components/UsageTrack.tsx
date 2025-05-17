@@ -39,7 +39,8 @@ function  UsageTrack() {
   };
 
   const IsUserSubscribe = async ()=>{
-    const result = await db.select().from(UserSubscription).where(eq(UserSubscription.email,user?.primaryEmailAddress?.emailAddress));
+    const result = await db.select().from(UserSubscription)
+    .where(eq(UserSubscription.email,user?.primaryEmailAddress?.emailAddress));
     if(result){
       setUserSubscription(true);
       setMaxWords(100000);

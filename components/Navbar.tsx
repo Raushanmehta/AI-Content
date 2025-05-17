@@ -7,7 +7,7 @@ const Navbar = () => {
   const router = useRouter();
 
   return (
-    <header className="text-gray-600 body-font sticky top-0 ">
+    <header className="text-gray-600 body-font sticky top-0">
       <div className="container mx-auto flex justify-between items-center p-5 md:px-16">
         
         <div className="flex items-center">
