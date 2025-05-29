@@ -114,7 +114,7 @@ const MonthlyCard = () => {
           </ul>
         </div>
 
-        <div className="mt-5 grid grid-cols-2 gap-x-4 py-4">
+        <div className="mt-5 grid grid-cols-2 gap-x-4 py-2">
           <div>
             <p className="text-sm text-gray-500">Cancel anytime.</p>
             <p className="text-sm text-gray-500">No card required.</p>
